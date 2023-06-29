@@ -109,6 +109,8 @@
   freetube
   slack
   spotify
+  pkgs.sshfs
+  pkgs.nodejs_20
   ];
 
 
