@@ -87,8 +87,7 @@
       firefox
       mpv
       google-chrome
-	terminator
-
+      terminator
     #  thunderbird
     ];
   };
@@ -111,6 +110,10 @@
   spotify
   pkgs.sshfs
   pkgs.nodejs_20
+  pkgs.cloudflared
+  pkgs.openvpn
+  pkgs.pass
+  unzip
   ];
 
 
@@ -135,6 +138,10 @@
 networking.extraHosts =
   ''
     172.17.20.92 xeno
+    172.17.20.118 simulacra
+    172.17.13.197 zenphone
+    192.168.128.91 ghostrider
+    192.168.128.70 synth2
   '';
 
   # This value determines the NixOS release from which the default
