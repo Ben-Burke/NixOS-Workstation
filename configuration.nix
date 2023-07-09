@@ -113,6 +113,9 @@
   pkgs.cloudflared
   pkgs.openvpn
   pkgs.pass
+  pkgs.remmina
+  pkgs.unrar
+  pkgs.gallery-dl
   unzip
   ];
 
