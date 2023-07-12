@@ -8,7 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+       <home-manager/nixos>
     ];
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -41,6 +43,10 @@
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
+
+
+  console.packages=[ pkgs.terminus_font ];
+  console.font="${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -92,6 +98,12 @@
     ];
   };
 
+    home-manager = {
+	useGlobalPkgs = true;
+	useUserPackages = true;
+	users.ben = import ./home.nix;
+      }; 
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -117,6 +129,8 @@
   pkgs.unrar
   pkgs.gallery-dl
   unzip
+  pkgs.kodi
+  pkgs.num-utils
   ];
 
 
