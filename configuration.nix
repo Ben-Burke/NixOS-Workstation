@@ -98,11 +98,14 @@
     ];
   };
 
-    home-manager = {
-	useGlobalPkgs = true;
-	useUserPackages = true;
-	users.ben = import ./home.nix;
-      }; 
+    #home-manager = {
+	#useGlobalPkgs = true;
+	#useUserPackages = true;
+	#users.ben = import ./home.nix;
+	#users.ben = { pkgs, ... }: {
+  	#home.packages = [ pkgs.atool pkgs.httpie ];
+  	#programs.bash.enable = true;
+      #}; 
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -112,25 +115,25 @@
   environment.systemPackages = with pkgs; [
   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
-  pkgs.python311Packages.pip
-  pkgs.python311Packages.yt-dlp
+  python311Packages.pip
+  python311Packages.yt-dlp
   ffmpeg-full
   git
   vscode
   freetube
   slack
   spotify
-  pkgs.sshfs
-  pkgs.nodejs_20
-  pkgs.cloudflared
-  pkgs.openvpn
-  pkgs.pass
-  pkgs.remmina
-  pkgs.unrar
-  pkgs.gallery-dl
+  sshfs
+  nodejs_20
+  cloudflared
+  openvpn
+  pass
+  remmina
+  unrar
+  gallery-dl
   unzip
-  pkgs.kodi
-  pkgs.num-utils
+  kodi
+  num-utils
   ];
 
 
