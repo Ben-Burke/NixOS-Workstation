@@ -134,6 +134,7 @@
   unzip
   kodi
   num-utils
+  signal-desktop
   ];
 
 
@@ -157,12 +158,14 @@
   # networking.firewall.enable = false;
 networking.extraHosts =
   ''
-    172.17.20.92 xeno
+    172.17.20.146 xeno
     172.17.20.118 simulacra
     172.17.13.197 zenphone
     172.17.19.218 eliot
     192.168.128.91 ghostrider
     192.168.128.70 synth2
+    172.17.1.216 alderson
+    192.168.0.61 benphone
   '';
 
   # This value determines the NixOS release from which the default
